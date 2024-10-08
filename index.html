@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMR Calculator</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #67b26f, #4ca2cd);
+            color: #333;
+            padding: 0;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1000px;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .image-container {
+            flex: 1;
+            text-align: center;
+            margin-right: 20px;
+        }
+        .image-container img {
+            max-width: 400px;
+            width: 100%;
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            max-width: 500px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            flex: 1;
+        }
+        .form-container h2 {
+            text-align: center;
+        }
+        .form-container input, .form-container select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-container input[type="submit"] {
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .form-container input[type="submit"]:hover {
+            background-color: #4ca2cd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Left: Image Container -->
+        <div class="image-container">
+            <img src="bmr.png" alt="BMR Infographic">
+        </div>
+
+        <!-- Right: BMR Calculator Form -->
+        <div class="form-container">
+            <h2>BMR Calculator</h2>
+            <form action="bmrcalculator.php" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="ic_number">IC Number:</label>
+                <input type="text" id="ic_number" name="ic_number" required>
+
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+
+                <label for="birth_year">Year of Birth:</label>
+                <input type="number" id="birth_year" name="birth_year" required>
+
+                <label for="height">Height (cm):</label>
+                <input type="number" id="height" name="height" required>
+
+                <label for="weight">Weight (kg):</label>
+                <input type="number" id="weight" name="weight" required>
+
+                <input type="submit" value="Calculate BMR">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
